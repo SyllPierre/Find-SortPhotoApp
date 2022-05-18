@@ -16,8 +16,6 @@ if (isset($_POST['submit']) && isset($_FILES['my_image']) && isset($_POST['image
 
 	$filters = $_POST['filters'];
 
-	$filtertest = $filters[0] . "," . $filters[1];
-
 	if ($error === 0) {
 		if ($img_size > 125000) {
 			$em = "Sorry, your file is too large.";
@@ -35,7 +33,7 @@ if (isset($_POST['submit']) && isset($_FILES['my_image']) && isset($_POST['image
 
 				// Insert into Database
 				$sql = "INSERT INTO images (image_url, image_date, filters) 
-				        VALUES('$new_img_name','$img_date', '$filtertest')";
+				        VALUES('$new_img_name','$img_date', '$filters')";
 				mysqli_query($conn, $sql);
 				header("Location: view.php");
 			}else {

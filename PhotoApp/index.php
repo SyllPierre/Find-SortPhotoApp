@@ -33,14 +33,8 @@
 			
 			<input type="date" id="start" name="image_date">
 
-			<input type="checkbox" name="filters[]" value="nature">
-      		<label for="nature">Nature</label>
-			
-			<input type="checkbox" name="filters[]" value="vacances">
-      		<label for="vacances">Vacances</label>
-			
-			<input type="checkbox" name="filters[]" value="famille">
-      		<label for="famille">Famille</label>
+			<input type="text" name="filters" size="100">
+      		<label for="filters">Description</label>
 
         	<input type="submit" 
                   name="submit"

@@ -38,6 +38,25 @@ global $conn;
 	   			<div class="alb" id="result">
 		   		<img src="uploads/<?=$images['image_url']?>">
 		  		<p> <?=$images['image_date']?> </p>
+				
+				<button onclick="document.getElementById('id01').style.display='block'"> Supprimer Data </button>
+				
+				<div id="id01" class="modal">
+					<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">x</span>
+					<from class="modal-content" action="">
+						<h1> Delete Data </h1>
+						<p> Are you sure you want to delete data ? </p>
+
+						<div>
+						
+							<button type="button" onclick="document.getElementById('id01').style.display='none'"> Cancel </button>
+
+							<button type="button" onclick="document.getElementById('id01').style.display='none'"> Delete </button>
+
+						</div>
+
+					</from>
+
 	   			</div>          		
 		<?php 
 				} 
@@ -45,7 +64,7 @@ global $conn;
 		}
 
 		function dateDesc($conn){
-			$sql = "SELECT * FROM images ORDER BY image_date DESC";
+			$sql = "SELECT * FROM images WHERE filters like '%identité%' OR filters like '%Pierre%' ORDER BY image_date DESC";
 			$res = mysqli_query($conn,  $sql);
 			createContent($res, $sql);
 		}
@@ -69,5 +88,13 @@ global $conn;
 <script>
 function clear_div() {
     document.getElementById("result").innerHTML = "";
+}
+
+var modal = document.getElementById('id01');
+
+window.onclick = function(event){
+	if (event.target == modal){
+		modal.style.display = "none";
+	}
 }
 </script>
