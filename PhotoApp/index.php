@@ -8,16 +8,8 @@
 <div class="navbar">
   		<a href="view.php">Voir Data</a>
   		<a href="index.php">Upload</a>
-  		<div class="dropdown">
-    		<button class="dropbtn">More
-     	 		<i class="fa fa-caret-down"></i>
-    		</button>
-    		<div class="dropdown-content">
-      			<a href="#">Link 1</a>
-      			<a href="#">Link 2</a>
-      			<a href="#">Link 3</a>
-    		</div>
-  		</div>
+		<a href="suppressionData.php">Page de suppression de Data</a>
+		<a href="diaporama.php">Diaporama de toutes les photos</a>
 	</div> 
 
 <body>
@@ -26,19 +18,24 @@
 	<?php endif ?>
      <form action="upload.php"
            method="post"
-           enctype="multipart/form-data">
+           enctype="multipart/form-data"
+		   id="form"
+		   class="topBefore">
 
            <input type="file" 
-                  name="my_image">
-			
-			<input type="date" id="start" name="image_date">
+                  name="my_image"> </br>
 
-			<input type="text" name="filters" size="100">
-      		<label for="filters">Description</label>
+			<input type="text" 
+                  name="titlePhoto" placeholder="Titre Photo"> </br>
+			
+			<input type="date" id="start" name="image_date"> </br>
+
+			<input type="text" name="filters" size="100" placeholder="Description"> </br>
 
         	<input type="submit" 
                   name="submit"
-                  value="Upload">
+                  value="Upload"
+				  id="submit"> </br>
      	
      </form>
 	

@@ -12,54 +12,47 @@ global $conn;
 <div class="navbar">
   		<a href="view.php">Voir Data</a>
   		<a href="index.php">Upload</a>
-		<a href="suppressionData.php">Page de suppression de Data</a>
+        <a href="suppressionData.php">Page de suppression de Data</a>
 		<a href="diaporama.php">Diaporama de toutes les photos</a>
+  		</div>
 	</div> 
 
 <body class="body">
 	 <form action="" method="post">
-	 	 <input type="text" name="filtersSearch" size="100" placeholder="Rechercher"> </br>
+	 	 <input type="text" name="filtersSearch" size="100" placeholder="Rechercher">
     	 <label for="filters">Mots clés à rechercher</label>
-		 <button type="submit" name="changeData"> Rechercher </button> </br>
+		 <button type="submit" name="changeData"> Rechercher </button>
 	 </form>
      <?php
 
 		function createContent($res, $sql){
 			?>
 			<table>
+			<tr>
 			<?php 
-			if (mysqli_num_rows($res) > 0) { ?>
-				<form action="diaporamaSelection.php"
-				method="post"
-				enctype="multipart/form-data">
-				<?php
+			if (mysqli_num_rows($res) > 0) {
 				while ($images = mysqli_fetch_assoc($res)) {  ?>
+
 				<tr>
 
 	   			<div class="alb" id="result">
-		   		<th> <img src="uploads/<?=$images['image_url']?>"  style="width: 25vw; min-width: 140px; max-height: 250px"> </th>
+				<th> <img src="uploads/<?=$images['image_url']?>"  style="width: 25vw; min-width: 140px; max-height: 250px"> </th>
 		  		<th> <p> <?=$images['image_date']?> </p> </th>
 				<th> <p> <?=$images['filters']?> </p> </th>
 				
-				<!-- <form action="" method="post">
+				<th>
+				<form action="" method="post">
 					<input type="text" name="URL" id="nameUrl" value="<?=$images['image_url']?>" >
 
 					<button type="submit" name="deleteBtn"> Supprimer Data </button>
-				</form> -->
-
-				<th> <input type="checkbox" name="images[]" value="<?=$images['image_url']?>"> Cocher la case pour sélectionner la photo dans le diaporama </th> </br>
-				
+				</form>
+				</th>
 				</div>
-
 				</tr>
 				      		
 		<?php 
 				}
 			?>
-
-			<input type="submit" name="selectDiapo" value="Lancer la selection en Diaporama" style="font: black">
-
-			</form>
 
 			</table>
 

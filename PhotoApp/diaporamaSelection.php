@@ -1,9 +1,37 @@
 ﻿<?php 
-	$nom_dossier = "uploads/";
-	$dossier = opendir($nom_dossier);
+	if (isset($_POST['selectDiapo']) && isset($_POST['images'])){
+
+	// $nom_dossier = "uploads/";
+	// $dossier = opendir($nom_dossier);
+	// $chaine = ""; $compteur = 0; $dernier_fichier="";
+	
+	// while($fichier = readdir($dossier))
+	// {
+	// 	if($fichier != "." && $fichier != ".." && (strtolower(pathinfo($fichier, PATHINFO_EXTENSION)) == "jpg" || strtolower(pathinfo($fichier, PATHINFO_EXTENSION)) == "png" || strtolower(pathinfo($fichier, PATHINFO_EXTENSION)) == "jpeg"))
+	// 	{
+	// 		$chaine .= $fichier.";";
+	// 		$dernier_fichier = $fichier;
+	// 		$compteur++;
+	// 	}
+	// }
+	
+	// $chaine = trim($chaine,";");
+
+	// $compteur = ceil($compteur/4)*4-$compteur;
+
+	// if($compteur>0){
+	// 	for($i=0;$i<$compteur;$i++){
+	// 		$chaine .= ";".$dernier_fichier;
+	// 	}
+	// }
+	
+	// closedir($dossier);
+
 	$chaine = ""; $compteur = 0; $dernier_fichier="";
 	
-	while($fichier = readdir($dossier))
+	$tabImagesDiapo = $_POST['images'];
+
+	foreach($tabImagesDiapo as $fichier)
 	{
 		if($fichier != "." && $fichier != ".." && (strtolower(pathinfo($fichier, PATHINFO_EXTENSION)) == "jpg" || strtolower(pathinfo($fichier, PATHINFO_EXTENSION)) == "png" || strtolower(pathinfo($fichier, PATHINFO_EXTENSION)) == "jpeg"))
 		{
@@ -23,7 +51,12 @@
 		}
 	}
 	
-	closedir($dossier);
+
+	}
+
+	else {
+		header("Location: view.php");
+	}
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
 <head>
@@ -239,6 +272,7 @@
 	function traite_texte(texte)
 	{
 		var chaine="";
+		
 		var tab_mots=texte.replace(".jpg","").split('');
 
 		for(var compteur=1;compteur<tab_mots.length;compteur++)
