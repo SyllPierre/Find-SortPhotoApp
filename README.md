@@ -22,7 +22,7 @@ Ensuite, lancer l'application et c'est bon, vous pouvez utiliser l'application e
 
 
 
-Pour les choix techniques, j'ai utilisé la solution php car c'est un language que je connais très bien pour pouvoir faire quelque chose de propre rapidement. Sans parler de la gestion des formulaires et du diaporama qui a été nettement facilité avec ce language (surtout qu'il existe beaucoup de documentation et d'exemples sur ce language sur internet).
+Pour les choix techniques, j'ai utilisé la solution `php` car c'est un language que je connais très bien pour pouvoir faire quelque chose de propre rapidement. Sans parler de la gestion des formulaires et du diaporama qui a été nettement facilité avec ce language (surtout qu'il existe beaucoup de documentation et d'exemples sur ce language sur internet).
 
 L'architecture est simple et basique, il y peu de pages.
 
