@@ -28,4 +28,4 @@ L'architecture est simple et basique, il y peu de pages.
 
 Pour la code, il n'y a rien de très compliqué à expliquer, j'utilise beaucoup de formulaires pour récupérer les données à Upload ou à utiliser pour le diaporama.
 
-Il y a également un peu de `javascript` pour le diaporama pour démarrer, arrêter le diaporama ou encore gérer la transition du diaporama. 
+Il y a également un peu de `javascript` pour le diaporama pour démarrer, arrêter le diaporama ou encore gérer la transition du diaporama.
