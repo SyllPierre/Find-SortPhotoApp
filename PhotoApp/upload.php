@@ -19,7 +19,7 @@ if (isset($_POST['submit']) && isset($_FILES['my_image']) && isset($_POST['image
 	$new_filters = str_replace("'", "''", $filters);
 
 	if ($error === 0) {
-		if ($img_size > 125000) {
+		if ($img_size > 700000) {
 			$em = "Sorry, your file is too large.";
 		    header("Location: index.php?error=$em");
 		}else {
@@ -34,7 +34,7 @@ if (isset($_POST['submit']) && isset($_FILES['my_image']) && isset($_POST['image
 				move_uploaded_file($tmp_name, $img_upload_path);
 
 				// Insert into Database
-				$sql = "INSERT INTO images (image_url, image_date, filters) 
+				$sql = "INSERT INTO images2 (image_url, image_date, filters) 
 				        VALUES('$new_img_name','$img_date', '$new_filters')";
 				mysqli_query($conn, $sql);
 				header("Location: view.php");

@@ -1,32 +1,6 @@
 ﻿<?php 
 	if (isset($_POST['selectDiapo']) && isset($_POST['images'])){
 
-	// $nom_dossier = "uploads/";
-	// $dossier = opendir($nom_dossier);
-	// $chaine = ""; $compteur = 0; $dernier_fichier="";
-	
-	// while($fichier = readdir($dossier))
-	// {
-	// 	if($fichier != "." && $fichier != ".." && (strtolower(pathinfo($fichier, PATHINFO_EXTENSION)) == "jpg" || strtolower(pathinfo($fichier, PATHINFO_EXTENSION)) == "png" || strtolower(pathinfo($fichier, PATHINFO_EXTENSION)) == "jpeg"))
-	// 	{
-	// 		$chaine .= $fichier.";";
-	// 		$dernier_fichier = $fichier;
-	// 		$compteur++;
-	// 	}
-	// }
-	
-	// $chaine = trim($chaine,";");
-
-	// $compteur = ceil($compteur/4)*4-$compteur;
-
-	// if($compteur>0){
-	// 	for($i=0;$i<$compteur;$i++){
-	// 		$chaine .= ";".$dernier_fichier;
-	// 	}
-	// }
-	
-	// closedir($dossier);
-
 	$chaine = ""; $compteur = 0; $dernier_fichier="";
 	
 	$tabImagesDiapo = $_POST['images'];
@@ -68,8 +42,8 @@
 </head>
 
 <div class="navbar">
-  		<a href="view.php">Voir Data</a>
-  		<a href="index.php">Upload</a>
+  		<a href="view.php">Voir toutes les données</a>
+  		<a href="index.php">Upload données</a>
 		<a href="suppressionData.php">Page de suppression de Data</a>
 		<a href="diaporama.php">Diaporama de toutes les photos</a>
 </div> 

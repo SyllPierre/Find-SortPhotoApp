@@ -10,8 +10,8 @@ global $conn;
 </head>
 
 <div class="navbar">
-  		<a href="view.php">Voir Data</a>
-  		<a href="index.php">Upload</a>
+  		<a href="view.php">Voir toutes les données</a>
+  		<a href="index.php">Upload données</a>
 		<a href="suppressionData.php">Page de suppression de Data</a>
 		<a href="diaporama.php">Diaporama de toutes les photos</a>
 	</div> 
@@ -40,12 +40,6 @@ global $conn;
 		   		<th> <img src="uploads/<?=$images['image_url']?>"  style="width: 25vw; min-width: 140px; max-height: 250px"> </th>
 		  		<th> <p> <?=$images['image_date']?> </p> </th>
 				<th> <p> <?=$images['filters']?> </p> </th>
-				
-				<!-- <form action="" method="post">
-					<input type="text" name="URL" id="nameUrl" value="<?=$images['image_url']?>" >
-
-					<button type="submit" name="deleteBtn"> Supprimer Data </button>
-				</form> -->
 
 				<th> <input type="checkbox" name="images[]" value="<?=$images['image_url']?>"> Cocher la case pour sélectionner la photo dans le diaporama </th> </br>
 				
@@ -57,7 +51,7 @@ global $conn;
 				}
 			?>
 
-			<input type="submit" name="selectDiapo" value="Lancer la selection en Diaporama" style="font: black">
+			<input type="submit" name="selectDiapo" value="Lancer la selection en Diaporama">
 
 			</form>
 
@@ -68,14 +62,14 @@ global $conn;
 		}
 
 		function createPage($conn){
-			$sql = "SELECT * FROM images ORDER BY image_date ASC";
+			$sql = "SELECT * FROM images2 ORDER BY image_date ASC";
     		$res = mysqli_query($conn,  $sql);
 
 			createContent($res, $sql);
 		}
 
-		function dateDesc($conn, $tabMots){
-			$sql = "SELECT * FROM images";
+		function rechercheMots($conn, $tabMots){
+			$sql = "SELECT * FROM images2";
 			$lenTab = count($tabMots);
 			if ($lenTab > 0){
 				if($lenTab == 1 && $tabMots[0] == ""){
@@ -99,27 +93,13 @@ global $conn;
 					$res = mysqli_query($conn,  $sql);
 				}
 			}
-
-			//$sql = "SELECT * FROM images WHERE filters like '%identité%' OR filters like '%Pierre%' ORDER BY image_date DESC";
-			//$res = mysqli_query($conn,  $sql);
 			
 			createContent($res, $sql);
 		}
 
-		function deleteData($conn, $imgUrl){
-			$sql = "DELETE FROM images WHERE `image_url` = '$imgUrl' ";
-			mysqli_query($conn,  $sql);
-			unlink("uploads/".$imgUrl);
-			createPage($conn);
-		}
-
 		if(isset($_POST['changeData']) && isset($_POST['filtersSearch'])){
 			$tab = explode(" ", $_POST['filtersSearch']);
-			dateDesc($conn, $tab);
-		}
-
-		else if(isset($_POST['deleteBtn']) && isset($_POST['URL'])){
-			deleteData($conn, $_POST['URL']);
+			rechercheMots($conn, $tab);
 		}
 
 		else {

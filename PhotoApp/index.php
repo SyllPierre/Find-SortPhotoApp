@@ -6,8 +6,8 @@
 </head>
 
 <div class="navbar">
-  		<a href="view.php">Voir Data</a>
-  		<a href="index.php">Upload</a>
+  		<a href="view.php">Voir toutes les données</a>
+  		<a href="index.php">Upload données</a>
 		<a href="suppressionData.php">Page de suppression de Data</a>
 		<a href="diaporama.php">Diaporama de toutes les photos</a>
 	</div> 

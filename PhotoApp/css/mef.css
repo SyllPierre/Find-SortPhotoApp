@@ -5,8 +5,6 @@
 body {
 	margin:0px;
 	padding:0px;
-	/*background:#FFFFFF;
-	background-repeat:repeat-x;*/
 	width:100%;
 	font-family:Calibri;
 	font-size:13px;
@@ -27,7 +25,6 @@ h2
 {
 	font-size:18px;
 	font-weight:bold;
-	/*margin-bottom:5px;*/
 }
 
 img
@@ -42,7 +39,6 @@ input
 {
 	width:100px;
 	height:100px;
-	/*Coins arrondis*/
 	border:#333 1px solid;
 	-moz-border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -279,14 +275,12 @@ a:active {
 	text-align:left;
 }
 
-/* Navbar container */
 .navbar {
     overflow: hidden;
     background-color: #333;
     font-family: Arial;
   }
   
-  /* Links inside the navbar */
   .navbar a {
     float: left;
     font-size: 16px;
@@ -296,13 +290,11 @@ a:active {
     text-decoration: none;
   }
   
-  /* The dropdown container */
   .dropdown {
     float: left;
     overflow: hidden;
   }
   
-  /* Dropdown button */
   .dropdown .dropbtn {
     font-size: 16px;
     border: none;
@@ -310,16 +302,14 @@ a:active {
     color: white;
     padding: 14px 16px;
     background-color: inherit;
-    font-family: inherit; /* Important for vertical align on mobile phones */
-    margin: 0; /* Important for vertical align on mobile phones */
+    font-family: inherit;
+    margin: 0;
   }
   
-  /* Add a red background color to navbar links on hover */
   .navbar a:hover, .dropdown:hover .dropbtn {
     background-color: red;
   }
   
-  /* Dropdown content (hidden by default) */
   .dropdown-content {
     display: none;
     position: absolute;
@@ -329,7 +319,6 @@ a:active {
     z-index: 1;
   }
   
-  /* Links inside the dropdown */
   .dropdown-content a {
     float: none;
     color: black;
@@ -339,12 +328,10 @@ a:active {
     text-align: left;
   }
   
-  /* Add a grey background color to dropdown links on hover */
   .dropdown-content a:hover {
     background-color: #ddd;
   }
   
-  /* Show the dropdown menu on hover */
   .dropdown:hover .dropdown-content {
     display: block;
   }
