@@ -1,10 +1,10 @@
 <?php  
 
 $sname = "localhost";
-$uname = "root";
-$password = "PepitoMySql@59138";
+$uname = "uname";
+$password = "password";
 
-$db_name = "dbtest";
+$db_name = "dbname";
 
 $conn = mysqli_connect($sname, $uname, $password, $db_name);
 global $conn;
