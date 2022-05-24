@@ -18,7 +18,7 @@ Ensuite, lancer l'application et c'est bon, vous pouvez utiliser l'application e
 
 
 
-Voici une vidéo de présentation de l'utilisation de l'application : `https://www.youtube.com/watch?v=j6KB8G3duwU`.
+[Voici une vidéo de présentation de l'utilisation de l'application](https://www.youtube.com/watch?v=j6KB8G3duwU) : `https://www.youtube.com/watch?v=j6KB8G3duwU`.
 
 
 
